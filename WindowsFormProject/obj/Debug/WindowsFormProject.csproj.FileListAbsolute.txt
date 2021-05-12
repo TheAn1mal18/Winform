@@ -1,0 +1,10 @@
+D:\WindowsFormProject\bin\Debug\WindowsFormProject.exe.config
+D:\WindowsFormProject\bin\Debug\WindowsFormProject.exe
+D:\WindowsFormProject\bin\Debug\WindowsFormProject.pdb
+D:\WindowsFormProject\obj\Debug\WindowsFormProject.csprojAssemblyReference.cache
+D:\WindowsFormProject\obj\Debug\WindowsFormProject.Properties.Resources.resources
+D:\WindowsFormProject\obj\Debug\WindowsFormProject.csproj.GenerateResource.cache
+D:\WindowsFormProject\obj\Debug\WindowsFormProject.csproj.CoreCompileInputs.cache
+D:\WindowsFormProject\obj\Debug\WindowsFormProject.exe
+D:\WindowsFormProject\obj\Debug\WindowsFormProject.pdb
+D:\WindowsFormProject\obj\Debug\WindowsFormProject.Multiplayer.resources
