@@ -50,7 +50,6 @@
             this.PlayerOneScore = new System.Windows.Forms.Label();
             this.PlayerTwoScore = new System.Windows.Forms.Label();
             this.Turn = new System.Windows.Forms.Label();
-            this.Restart = new System.Windows.Forms.Button();
             this.MatchingGameLayout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -316,22 +315,11 @@
             this.Turn.TabIndex = 4;
             this.Turn.Text = "Player 1";
             // 
-            // Restart
-            // 
-            this.Restart.Location = new System.Drawing.Point(251, 8);
-            this.Restart.Name = "Restart";
-            this.Restart.Size = new System.Drawing.Size(75, 23);
-            this.Restart.TabIndex = 5;
-            this.Restart.Text = "Restart";
-            this.Restart.UseVisualStyleBackColor = true;
-            this.Restart.Click += new System.EventHandler(this.Restart_Click);
-            // 
             // Multiplayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 413);
-            this.Controls.Add(this.Restart);
             this.Controls.Add(this.Turn);
             this.Controls.Add(this.PlayerTwoScore);
             this.Controls.Add(this.PlayerOneScore);
@@ -367,7 +355,6 @@
         private System.Windows.Forms.Label PlayerOneScore;
         private System.Windows.Forms.Label PlayerTwoScore;
         private System.Windows.Forms.Label Turn;
-        private System.Windows.Forms.Button Restart;
     }
 }
 
