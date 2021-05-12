@@ -12,6 +12,7 @@ namespace WindowsFormProject
 {
     public partial class Multiplayer : Form
     {
+        // Create all the variables used to control player turns, icons, and when the players have clicked
         bool Player = false;
 
         int ScoreOne = 0;
@@ -34,20 +35,24 @@ namespace WindowsFormProject
         public Multiplayer()   
         {
             InitializeComponent();
+            // this randomizes the icons with the labels
             AssignRandomMatches();  
         }
         private void CheckForWinner()
         {
             foreach(Control control in MatchingGameLayout.Controls)
             {
+                // this looks through every control in the table and checks if they have all been matched or not.
                 Label iconLabel = control as Label;
 
                 if (iconLabel != null)
                 {
+                    // if anyone label has not been matched it returns and stops checking.
                     if (iconLabel.ForeColor == iconLabel.BackColor)
                         return;        
                 }
             }
+            // this checks to see which player has won.
             if (ScoreOne > ScoreTwo)
             {
                 MessageBox.Show("Congratulations Player One you win!");
@@ -68,6 +73,7 @@ namespace WindowsFormProject
         {
             foreach (Control control in MatchingGameLayout.Controls)
             {
+                //this checks through every variable and assigns each a random string from the icons list.
                 Label iconLabel = control as Label;
                 if (iconLabel != null)
                 {
@@ -83,6 +89,7 @@ namespace WindowsFormProject
         {
             if (timer1.Enabled == true)
             {
+                // if the timer is still going this stops the player from clicking.
                 return;
             }
 
@@ -96,11 +103,13 @@ namespace WindowsFormProject
                 }
                 if(firstClicked == null)
                 {
+                    // if it is the players first click this will save that label string
                     firstClicked = clickLabel;
                     firstClicked.ForeColor = Color.Black;
 
                     return;
                 }
+                // this saves the players second click with the labels text
                 secondClicked = clickLabel;
                 secondClicked.ForeColor = Color.Black;
 
@@ -114,11 +123,13 @@ namespace WindowsFormProject
 
             if (firstClicked.Text != secondClicked.Text)
             {
+                // this decides if the two labels the player has clicked match.
                 firstClicked.ForeColor = firstClicked.BackColor;
                 secondClicked.ForeColor = firstClicked.BackColor;
             }
             else
             {
+                // this changes the turn between the two players.
                 if (Turn.Text == "Player 1")
                 {
                     ScoreOne += 1;
@@ -137,6 +148,7 @@ namespace WindowsFormProject
 
             if (Player == true)
             {
+                // this changes the text of the players turn.
                 Turn.Text = "Player 1";
                 Player = false;
             }
@@ -145,23 +157,6 @@ namespace WindowsFormProject
                 Turn.Text = "Player 2";
                 Player = true;
             }
-            CheckForWinner();
-        }
-
-        private void Restart_Click(object sender, EventArgs e)
-        {
-            foreach (Control control in MatchingGameLayout.Controls)
-            {
-                Label iconLabel = control as Label;
-
-                iconLabel.ForeColor = iconLabel.BackColor;
-            }
-            Icons = IconCopy;
-            AssignRandomMatches();
-            Player = false;
-            timer1.Start();
-            ScoreOne = 0;
-            ScoreTwo = 0;
             CheckForWinner();
         }
     }
